@@ -1,0 +1,102 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html {
+  scroll-behavior: smooth;
+}
+main{
+  height: 100vh;
+  width: 100%;
+  max-height: 100vh;
+  max-width: 100%;
+  background: linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.7)),url(../imgs/back.jpg);
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding-top: 100px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif
+}
+.container{
+  height: 400px;
+  width: 60%;
+  background: #fff;
+  box-shadow: 0px 10px 50px rgba(0, 0, 0, 0.6);
+  margin: auto;  
+}
+#game-board{
+  display: grid;
+  grid-template-columns: repeat(2, 50%);
+}
+.active{
+  height: 400px;
+  background: #F6F5F7;
+  
+}
+.player-score-designs{
+  font-size: 2em;
+  text-align: center;
+}
+.player-name-1,.player-name-0{
+  margin-top: 2.7em;
+}
+.player-round-score{
+  color: #EB4D4D;
+}
+.current-score-box{
+  height: 100px;
+  width: 150px;
+  background: #EB4D4D;
+  margin: 2.4em auto;
+  padding: 10px;
+}
+.player-current-label{font-size: 0.5em; text-transform: uppercase;}
+.player-current-status{margin-top: 0.6em; color: #fff;}
+.game-control{position: relative;}
+.new-game{
+  position: absolute;
+  bottom: 23em;
+  left: 21em;
+}
+.roll-dice{
+  position: absolute;
+  bottom: 8em;
+  left: 21em;
+}
+.hold{
+  position: absolute;
+  bottom: 4em;
+  left: 23em;
+}
+.btn{
+  text-transform: uppercase;
+  cursor: pointer;
+  padding: 8px;
+  font-size: 1.2em;
+}
+.dice-holder{
+  height: 80px;
+  width: 80px;
+  position: absolute;
+  bottom: 24em;
+  left: 46%;
+  box-shadow: 0 0 10px #000;
+}
+img{
+  object-fit: cover;
+  height: inherit;
+  width: inherit;
+}
+
+.active .player-name-1::after, .active .player-name-0::after {
+    content: "\2022";
+    color: #EB4D4D;
+    
+}
+@media screen and (min-width: 200px) and (max-width: 1000px) {
+  .container{
+    width: 100%;
+  }
+}
+

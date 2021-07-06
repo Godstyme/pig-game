@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PIG GAME</title>
+  <link rel="stylesheet" href="assets/style/app.css">
+</head>
+<body>
+  <main>
+    <section class="container">
+      <div id="game-board">
+        <div class="active panel-0">
+          <div class="player-name-0 player-score-designs">Player 1</div>
+          <div class="player-saved-score-0 player-score-designs">16</div>
+          <div class="current-score-box player-score-designs">
+            <div class="player-current-label">Current</div>
+            <div class="player-current-status" id="current-0">8</div>
+          </div>
+        </div>
+        <div class="panel-1">
+          <div class="player-name-1 player-score-designs">Player 2</div>
+          <div class="player-saved-score-1 player-score-designs">10</div>
+          <div class="current-score-box player-score-designs">
+            <div class="player-current-label">Current</div>
+            <div class="player-current-status" id="current-1">5</div>
+          </div>
+        </div>
+      </div>
+      <div class="game-control">
+        <div class="new-game">
+          <button class="btn btn-new">New game</button>
+        </div>
+        <div class="roll-dice">
+          <button class="btn btn-roll">Roll dice</button>
+        </div>
+        <div class="hold">
+          <button class="btn btn-hold">Hold</button>
+        </div>
+      </div>
+      <div class="dice-holder">
+        <img src="assets/imgs/dice-1.png" alt="Dice" class="dice">
+      </div>
+    </section>
+  </main>
+  
+
+  <script src="assets/script/app.js"></script>
+</body>
+</html>
