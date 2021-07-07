@@ -1,4 +1,4 @@
-let scores, currentPlayerStatus, totalScore;
+let scores, currentPlayerStatus, totalScore, activePlaying;
 
 
 // set current scores to zero (0)
@@ -33,7 +33,7 @@ let init = () => {
   scores = [0,0];
   currentPlayerStatus = 0;
   totalScore = 0;
-  // activePlaying = true
+  activePlaying = true
   setDiceDisplay()
   setCurrentScore()
   setSavedScore()
@@ -42,7 +42,7 @@ init()
 
 //========= when player rolls a dice ============
 document.querySelector('.btn-roll').addEventListener('click', ()=>{
-  if (activeplaying) {
+  if (activePlaying) {
     const dice = Math.floor((Math.random() * 6) + 1);
     document.querySelector('.dice-holder').style.display = 'block'
     document.querySelector('.dice').src = `assets/imgs/dice-${dice}.png`;
@@ -62,17 +62,18 @@ document.querySelector('.btn-roll').addEventListener('click', ()=>{
 document.querySelector('.btn-hold').addEventListener('click', () => {
   if (activePlaying) {
     scores[currentPlayerStatus] += totalScore
-  document.querySelector(`.player-saved-score-${currentPlayerStatus}`).innerHTML = scores[currentPlayerStatus];
-  document.querySelector(`.player-saved-score-${currentPlayerStatus}`).innerHTML = scores[currentPlayerStatus];
-  if (scores[currentPlayerStatus] >= 20) {
-    document.querySelector(`.player-name-${currentPlayerStatus}`).textContent = 'Winner!!! :)' 
-    document.querySelector(`.panel-${currentPlayerStatus}`).style.color = '#EB4D4D' 
-    activePlaying = false
-    // document.querySelector(`.player-name-${currentPlayerStatus}::after`).style.content = 'none' 
-    setDiceDisplay()    
-  }else {
-     setNextPlayer()
-   }
+    document.querySelector(`.player-saved-score-${currentPlayerStatus}`).innerHTML = scores[currentPlayerStatus];
+    document.querySelector(`.player-saved-score-${currentPlayerStatus}`).innerHTML = scores[currentPlayerStatus];
+    if (scores[currentPlayerStatus] >= 20) {
+      document.querySelector(`.player-name-${currentPlayerStatus}`).textContent = 'Winner!!! :)' 
+      document.querySelector(`.panel-${currentPlayerStatus}`).style.color = '#EB4D4D' 
+      activePlaying = false
+      // alert("Game over!, Start again :)")
+      // document.querySelector(`.player-name-${currentPlayerStatus}::after`).style.content = 'none' 
+      setDiceDisplay()    
+    }else {
+      setNextPlayer()
+    }
   }
 })
 
